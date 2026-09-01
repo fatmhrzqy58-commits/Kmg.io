@@ -1,0 +1,759 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    color: #e8faff;
+
+    /* 🌌 پس زمینه آینده نگر */
+    background-color: #050816;
+
+    background-image:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0, 200, 255, 0.35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(130, 40, 255, 0.35),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #030512 0%,
+            #071827 50%,
+            #10051f 100%
+        );
+
+    background-attachment: fixed;
+
+    transition: 0.4s;
+}
+
+
+/* هدر */
+
+header {
+    margin: 20px;
+    padding: 20px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(5, 20, 35, 0.8);
+
+    border: 1px solid rgba(0, 220, 25, 0.35);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 0 25px rgba(0, 200, 255, 0.15);
+}
+
+header h1 {
+    margin: 0;
+
+    color: #72eaff;
+
+    text-shadow:
+        0 0 10px #00cfff,
+        0 0 25px rgba(0, 200, 255, 0.5);
+}
+
+
+/* دکمه دارک مود */
+
+#darkMode {
+    padding: 12px 18px;
+
+    background: #081b2b;
+
+    color: #7eefff;
+
+    border: 1px solid #00d9ff;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 0 15px rgba(0, 217, 255, 0.2);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#darkMode:hover {
+    box-shadow:
+        0 0 25px rgba(0, 217, 255, 0.6);
+
+    transform: translateY(-2px);
+}
+
+
+/* محتوای اصلی */
+
+main {
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 20px 15px 50px;
+}
+
+
+/* سه کارت */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.card {
+    padding: 28px;
+
+    background:
+        rgba(8, 27, 43, 0.72);
+
+    border:
+        1px solid rgba(0, 220, 255, 0.25);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        inset 0 0 20px rgba(0, 200, 255, 0.04);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    border-color: #00ddff;
+
+    box-shadow:
+        0 0 25px rgba(0, 220, 255, 0.35);
+}
+
+.card h2 {
+    color: #75eaff;
+
+    text-shadow:
+        0 0 10px rgba(0, 220, 255, 0.3);
+}
+
+.card p {
+    color: #b8ccd5;
+
+    line-height: 1.8;
+}
+
+
+/* بخش گزارش */
+
+.report {
+    margin-top: 30px;
+
+    padding: 30px;
+
+    background:
+        rgba(8, 23, 39, 0.78);
+
+    border:
+        1px solid rgba(150, 70, 255, 0.35);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(120, 50, 255, 0.08);
+}
+
+.report h2 {
+    color: #c99cff;
+
+    text-shadow:
+        0 0 12px rgba(170, 80, 255, 0.4);
+}
+
+
+/* ورودی ها */
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 12px;
+
+    background:
+        rgba(2, 10, 20, 0.85);
+
+    color: white;
+
+    border:
+        1px solid #21475c;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #00ddff;
+
+    box-shadow:
+        0 0 18px rgba(0, 220, 255, 0.25);
+}
+
+textarea {
+    height: 150px;
+
+    resize: vertical;
+}
+
+
+/* دکمه ارسال */
+
+#sendReport {
+    margin-top: 15px;
+
+    padding: 13px 25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #007cff,
+            #8b35ff
+        );
+
+    color: white;
+
+    border: none;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px rgba(70, 100, 255, 0.35);
+
+    transition: 0.3s;
+}
+
+#sendReport:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 30px rgba(80, 120, 255, 0.6);
+}
+
+
+/* پیام */
+
+#result {
+    margin-top: 15px;
+
+    color: #70ffce;
+}
+
+
+/* 📱 موبایل */
+
+@media (max-width: 700px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .card,
+    .report {
+        padding: 22px;
+    }
+}
+/* ✨ نورهای نئونی متحرک */
+
+.neon-light {
+    position: fixed;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    opacity: 0.45;
+}
+
+
+/* نور آبی */
+
+.light1 {
+    background: #00d9ff;
+
+    top: 10%;
+    left: -100px;
+
+    animation:
+        moveLight1 8s infinite alternate ease-in-out;
+}
+
+
+/* نور بنفش */
+
+.light2 {
+    background: #8b35ff;
+
+    right: -100px;
+    bottom: 10%;
+
+    animation:
+        moveLight2 10s infinite alternate ease-in-out;
+}
+
+
+/* نور سوم */
+
+.light3 {
+    background: #0066ff;
+
+    top: 45%;
+    left: 40%;
+
+    animation:
+        moveLight3 12s infinite alternate ease-in-out;
+}
+
+
+/* حرکت نور اول */
+
+@keyframes moveLight1 {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(250px, 150px);
+    }
+
+    100% {
+        transform: translate(100px, 400px);
+    }
+}
+
+
+/* حرکت نور دوم */
+
+@keyframes moveLight2 {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-250px, -150px);
+    }
+
+    100% {
+        transform: translate(-100px, -400px);
+    }
+}
+
+
+/* حرکت نور سوم */
+
+@keyframes moveLight3 {
+
+    0% {
+        transform: translate(-200px, 0);
+    }
+
+    50% {
+        transform: translate(150px, -100px);
+    }
+
+    100% {
+        transform: translate(-100px, 200px);
+    }
+}
+/* =========================
+   شبکه دیجیتالی آینده‌نگر
+========================= */
+
+.digital-grid {
+    position: fixed;
+    inset: 0;
+
+    z-index: -2;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 210, 255, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 210, 255, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    animation: gridMove 8s linear infinite;
+}
+
+@keyframes gridMove {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 45px 45px;
+    }
+}
+
+
+/* =========================
+   ذرات نورانی
+========================= */
+
+.particles {
+    position: fixed;
+    inset: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(0, 220, 255, 0.8) 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle,
+            rgba(150, 70, 255, 0.7) 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.5) 1px,
+            transparent 2px
+        );
+
+    background-size:
+        100px 100px,
+        150px 150px,
+        200px 200px;
+
+    background-position:
+        20px 30px,
+        70px 90px,
+        40px 120px;
+
+    animation: particlesMove 15s linear infinite;
+}
+
+@keyframes particlesMove {
+
+    0% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translateY(-100px);
+        opacity: 0.5;
+    }
+}
+/* =========================
+   انیمیشن ورود سایت
+========================= */
+
+/* انیمیشن کلی هدر */
+
+header {
+    animation: headerEnter 1s ease-out;
+}
+
+@keyframes headerEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* کارت‌ها */
+
+.card {
+    opacity: 0;
+    animation: cardEnter 0.8s ease-out forwards;
+}
+
+
+/* ورود جداگانه کارت‌ها */
+
+.card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+
+@keyframes cardEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* فرم گزارش */
+
+.report {
+    opacity: 0;
+
+    animation:
+        reportEnter 1s ease-out 0.8s forwards;
+}
+
+@keyframes reportEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* افکت درخشش عنوان */
+
+header h1 {
+    animation: titleGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+
+    from {
+        text-shadow:
+            0 0 5px #00d9ff;
+    }
+
+    to {
+        text-shadow:
+            0 0 10px #00d9ff,
+            0 0 25px #00d9ff,
+            0 0 40px rgba(0, 217, 255, 0.5);
+    }
+}
+
+
+/* افکت درخشش کارت هنگام ورود */
+
+.card h2 {
+    animation:
+        textGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+
+    from {
+        text-shadow:
+            0 0 3px rgba(0, 220, 255, 0.2);
+    }
+
+    to {
+        text-shadow:
+            0 0 12px rgba(0, 220, 255, 0.5);
+    }
+}
+/* =========================
+   صفحه پیام‌ها
+========================= */
+
+.back-button {
+    text-decoration: none;
+
+    padding: 11px 18px;
+
+    color: #7eefff;
+
+    background: #081b2b;
+
+    border: 1px solid #00d9ff;
+
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    box-shadow:
+        0 0 20px rgba(0, 217, 255, 0.5);
+
+    transform: translateX(4px);
+}
+
+
+.messages {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+.message-card {
+    padding: 25px;
+
+    background:
+        rgba(8, 27, 43, 0.75);
+
+    border:
+        1px solid rgba(0, 220, 255, 0.3);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+
+    animation:
+        messageEnter 0.8s ease-out;
+}
+
+
+.message-card span {
+    color: #6feaff;
+
+    font-size: 14px;
+}
+
+
+.message-card h2 {
+    color: #ffffff;
+}
+
+
+.message-card p {
+    color: #b8ccd5;
+
+    line-height: 1.8;
+}
+
+
+.message-card small {
+    color: #718894;
+}
+
+
+@keyframes messageEnter {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* موبایل */
+
+@media (max-width: 700px) {
+
+    .message-card {
+        padding: 20px;
+    }
+
+}
+.message-link {
+    display: block;
+
+    text-decoration: none;
+
+    color: inherit;
+}
