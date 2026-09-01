@@ -757,3 +757,246 @@ header h1 {
 
     color: inherit;
 }
+/* =========================
+   پنل مدیریت
+========================= */
+
+.admin-header {
+    animation: headerEnter 1s ease-out;
+}
+
+
+.admin-panel {
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 25px 15px 60px;
+}
+
+
+.admin-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+    padding: 25px;
+
+    background: rgba(8, 27, 43, 0.75);
+
+    border: 1px solid rgba(0, 220, 255, 0.25);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+}
+
+
+.admin-title h2 {
+    margin-top: 0;
+
+    color: #79eaff;
+}
+
+
+.admin-title p {
+    color: #a9c0ca;
+}
+
+
+.report-count {
+    min-width: 90px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    color: #7eefff;
+
+    background: rgba(0, 180, 255, 0.08);
+
+    border: 1px solid rgba(0, 220, 255, 0.3);
+
+    border-radius: 15px;
+}
+
+
+.report-count span {
+    display: block;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+
+/* گزارش */
+
+#reports {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.report-item {
+    padding: 25px;
+
+    background:
+        rgba(8, 27, 43, 0.78);
+
+    border:
+        1px solid rgba(0, 220, 255, 0.22);
+
+    border-radius: 18px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3);
+
+    animation:
+        reportEnter 0.7s ease-out;
+}
+
+
+.report-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.report-top h3 {
+    margin: 0 0 7px;
+
+    color: white;
+}
+
+
+.report-top small {
+    color: #718894;
+}
+
+
+.status {
+    padding: 6px 12px;
+
+    color: #70ffce;
+
+    background:
+        rgba(50, 255, 190, 0.08);
+
+    border:
+        1px solid rgba(50, 255, 190, 0.25);
+
+    border-radius: 20px;
+
+    font-size: 13px;
+}
+
+
+.report-text {
+    margin: 20px 0;
+
+    padding: 15px;
+
+    line-height: 1.9;
+
+    color: #c5d6dd;
+
+    background:
+        rgba(0, 0, 0, 0.18);
+
+    border-radius: 12px;
+}
+
+
+/* حذف */
+
+.delete-button {
+    padding: 10px 15px;
+
+    color: #ff9b9b;
+
+    background:
+        rgba(255, 60, 60, 0.08);
+
+    border:
+        1px solid rgba(255, 70, 70, 0.3);
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.delete-button:hover {
+    background:
+        rgba(255, 60, 60, 0.18);
+
+    transform: translateY(-2px);
+}
+
+
+/* موبایل */
+
+@media (max-width: 700px) {
+
+    .admin-title {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 20px;
+    }
+
+    .report-count {
+        width: 100%;
+    }
+
+    .report-item {
+        padding: 20px;
+    }
+
+}
+.admin-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto;
+}
+
+.admin-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.admin-card {
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.admin-card h2 {
+    margin-bottom: 20px;
+}
+
+#reports {
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.2);
+}

@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>پنل مدیریت</title>
 
@@ -16,136 +11,19 @@
 
 <body>
 
-    <header class="admin-header">
+    <div class="admin-container">
 
-        <h1>🛠️ پنل مدیریت</h1>
+        <h1>🛡️ پنل مدیریت</h1>
 
-        <a href="index.html" class="back-button">
-            ← سایت اصلی
-        </a>
+        <div class="admin-card">
+            <h2>گزارش‌های دریافتی</h2>
 
-    </header>
-
-
-    <main class="admin-panel">
-
-        <div class="admin-title">
-
-            <div>
-                <h2>📋 گزارش‌های کاربران</h2>
-
-                <p>
-                    گزارش‌های ارسال شده را از اینجا مشاهده کنید.
-                </p>
+            <div id="reports">
+                هنوز گزارشی دریافت نشده است.
             </div>
-
-            <div class="report-count">
-                <span id="reportCount">2</span>
-                گزارش
-            </div>
-
         </div>
 
-
-        <section id="reports">
-
-            <!-- گزارش اول -->
-
-            <div class="report-item">
-
-                <div class="report-top">
-
-                    <div>
-                        <h3>👤 علی</h3>
-                        <small>
-                            امروز - 15:20
-                        </small>
-                    </div>
-
-                    <span class="status">
-                        جدید
-                    </span>
-
-                </div>
-
-                <p class="report-text">
-                    این یک گزارش آزمایشی است.
-                    سیستم به درستی کار می‌کند.
-                </p>
-
-                <button class="delete-button">
-                    🗑️ حذف
-                </button>
-
-            </div>
-
-
-            <!-- گزارش دوم -->
-
-            <div class="report-item">
-
-                <div class="report-top">
-
-                    <div>
-                        <h3>👤 محمد</h3>
-                        <small>
-                            امروز - 14:05
-                        </small>
-                    </div>
-
-                    <span class="status">
-                        جدید
-                    </span>
-
-                </div>
-
-                <p class="report-text">
-                    گزارش دوم برای آزمایش پنل مدیریت.
-                </p>
-
-                <button class="delete-button">
-                    🗑️ حذف
-                </button>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <script>
-
-        const deleteButtons =
-            document.querySelectorAll(".delete-button");
-
-        deleteButtons.forEach(function(button) {
-
-            button.addEventListener("click", function() {
-
-                const report =
-                    button.closest(".report-item");
-
-                report.remove();
-
-                updateCount();
-
-            });
-
-        });
-
-
-        function updateCount() {
-
-            const reports =
-                document.querySelectorAll(".report-item");
-
-            document.getElementById("reportCount")
-                .innerText = reports.length;
-        }
-
-    </script>
+    </div>
 
 </body>
-
 </html>
